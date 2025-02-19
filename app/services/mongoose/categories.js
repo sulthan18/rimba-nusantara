@@ -51,16 +51,24 @@ const updateCategories = async (req) => {
 };
 
 const deleteCategories = async (req) => {
-    const { id } = req.params;
-  
-    const category = await Categories.findById(id);
-    if (!category) {
-      throw new NotFoundError(`Kategori dengan id: ${id} tidak ditemukan`);
-    }
-  
-    await Categories.deleteOne({ _id: id });
-    return category;
-  };
+  const { id } = req.params;
+
+  const category = await Categories.findById(id);
+  if (!category) {
+    throw new NotFoundError(`Kategori dengan id: ${id} tidak ditemukan`);
+  }
+
+  await Categories.deleteOne({ _id: id });
+  return category;
+};
+
+const checkingCategories = async (id) => {
+  const result = await Categories.findOne({ _id: id });
+
+  if (!result) throw new NotFoundError(`Tidak ada Kategori dengan id : ${id}`);
+
+  return result;
+};
 
 module.exports = {
   getAllCategories,
@@ -68,4 +76,5 @@ module.exports = {
   getOneCategories,
   updateCategories,
   deleteCategories,
+  checkingCategories,
 };
