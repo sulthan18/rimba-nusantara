@@ -11,4 +11,8 @@ let createCMSOrganizer = Schema(
   { timestamps: true }
 );
 
+
 module.exports = model("Organizer", createCMSOrganizer);
+
+module.exports = model("Organizer", createCMSOrganizer);
+
