@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-// const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 const userSchema = new mongoose.Schema(
@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema(
       enum: ["admin", "organizer", "owner"],
       default: "admin",
     },
+
     organizer: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Organizer",
@@ -42,8 +43,13 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
+
 userSchema.methods.comparePassword = async function (candidatePassword) {
   const isMatch = await bcrypt.compare(candidatePassword, this.password);
+
+userSchema.methods.comparePassword = async function (canditatePassword) {
+  const isMatch = await bcrypt.compare(canditatePassword, this.password);
+
   return isMatch;
 };
 
