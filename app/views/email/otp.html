@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rimba Nusantara - Your OTP Code</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .email-wrapper {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+    
+    .email-header {
+      padding: 30px;
+      text-align: center;
+      background-color: #ffffff;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    
+    .email-body {
+      padding: 40px 30px;
+    }
+    
+    .greeting {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+    
+    .message {
+      font-size: 16px;
+      margin-bottom: 30px;
+      color: #444;
+    }
+    
+    .otp-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+    
+    .otp-code {
+      display: inline-block;
+      background-color: #f0f7f0;
+      border: 2px solid #1a5d1a;
+      color: #1a5d1a;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      padding: 16px 30px;
+      border-radius: 8px;
+      margin: 0 auto;
+    }
+    
+    .note {
+      font-size: 14px;
+      color: #777;
+      margin-top: 30px;
+      font-style: italic;
+    }
+    
+    .email-footer {
+      padding: 25px 30px;
+      background-color: #f9f9f9;
+      border-top: 1px solid #eee;
+    }
+    
+    .footer-text {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    
+    .company-info {
+      font-size: 13px;
+      color: #999;
+      line-height: 1.5;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .container {
+        padding: 20px 15px;
+      }
+      
+      .email-header {
+        padding: 20px;
+      }
+      
+      .email-body {
+        padding: 30px 20px;
+      }
+      
+      .otp-code {
+        font-size: 24px;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="email-wrapper">
+      <div class="email-header">
+        <a href="#" class="logo">Rimba Nusantara</a>
+      </div>
+      
+      <div class="email-body">
+        <h1 class="greeting">Hello {{firstName}},</h1>
+        
+        <p class="message">
+          Thank you for choosing Rimba Nusantara. Please use the following verification code to complete your sign-up process:
+        </p>
+        
+        <div class="otp-container">
+          <div class="otp-code">{{otp}}</div>
+        </div>
+        
+        <p class="message">
+          This code will expire in 10 minutes. If you didn't request this code, please ignore this email.
+        </p>
+        
+        <p class="note">
+          For security reasons, never share this code with anyone.
+        </p>
+      </div>
+      
+      <div class="email-footer">
+        <p class="footer-text">Warm regards,<br>The Rimba Nusantara Team</p>
+        
+        <div class="company-info">
+          <p>Rimba Nusantara Inc.</p>
+          <p>Jalan Konservasi No. 123, Jakarta</p>
+          <p>&copy; 2024 Rimba Nusantara. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
