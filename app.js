@@ -5,6 +5,12 @@ const logger = require("morgan");
 
 const app = express();
 
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
+});
+
+
 // import from routes
 const categoriesRouter = require("./app/api/v1/categories/router");
 const imagesRouter = require("./app/api/v1/images/router");
@@ -14,6 +20,7 @@ const organizersRouter = require("./app/api/v1/organizers/router");
 const authCMSRouter = require("./app/api/v1/auth/router");
 const ordersRouter = require("./app/api/v1/orders/router");
 const participantsRouter = require("./app/api/v1/participants/router");
+const paymentsRouter = require("./app/api/v1/payments/router");
 
 // import from middlewares
 const notFoundMiddleware = require("./app/middlewares/not-found");
@@ -40,6 +47,7 @@ app.use(`${v1}/cms`, eventsRouter);
 app.use(`${v1}/cms`, organizersRouter);
 app.use(`${v1}/cms`, authCMSRouter);
 app.use(`${v1}/cms`, ordersRouter);
+app.use(`${v1}/cms`, paymentsRouter);
 app.use(`${v1}`, participantsRouter);
 
 // middlewares

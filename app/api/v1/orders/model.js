@@ -26,19 +26,19 @@ const orderSchema = new mongoose.Schema(
     personalDetail: {
       firstName: {
         type: String,
-        required: [true, "Silahkan isi nama depan"],
+        required: [true, "Nama depan wajib diisi"],
         minlength: 3,
         maxlength: 50,
       },
       lastName: {
         type: String,
-        required: [true, "Silahkan isi nama belakang"],
+        required: [true, "Nama belakang wajib diisi"],
         minlength: 3,
         maxlength: 50,
       },
       email: {
         type: String,
-        required: [true, "Silahkan isi email"],
+        required: [true, "Email wajib diisi"],
       },
       role: {
         type: String,
@@ -74,55 +74,48 @@ const orderSchema = new mongoose.Schema(
       ref: "Event",
       required: true,
     },
+
     historyEvent: {
-      // title: {
-      //   type: String,
-      //   required: [true, "Judul harus diisi"],
-      //   minlength: 3,
-      //   maxlength: 50,
-      // },
-      // date: {
-      //   type: Date,
-      //   required: [true, "Tanggal dan waktu harus diisi"],
-      // },
-      // about: {
-      //   type: String,
-      // },
-      // tagline: {
-      //   type: String,
-      //   required: [true, "Tagline harus diisi"],
-      // },
-      // keyPoint: {
-      //   type: [String],
-      // },
-      // venueName: {
-      //   type: String,
-      //   required: [true, "Tempat acara harus diisi"],
-      // },
-      // statusEvent: {
-      //   type: String,
-      //   enum: ["Draft", "Published"],
-      //   default: "Draft",
-      // },
-      // tickets: {
-      //   type: [ticketCategoriesSchema],
-      //   required: true,
-      // },
-      // image: {
-      //   type: mongoose.Types.ObjectId,
-      //   ref: "Image",
-      //   required: true,
-      // },
-      // category: {
-      //   type: mongoose.Types.ObjectId,
-      //   ref: "Category",
-      //   required: true,
-      // },
-      // talent: {
-      //   type: mongoose.Types.ObjectId,
-      //   ref: "Talent",
-      //   required: true,
-      // },
+      title: {
+        type: String,
+        required: [true, "Judul harus diisi"],
+        minlength: 3,
+        maxlength: 50,
+      },
+      date: {
+        type: Date,
+        required: [true, "Tanggal dan waktu harus diisi"],
+      },
+      about: {
+        type: String,
+      },
+      tagline: {
+        type: String,
+        required: [true, "Tagline harus diisi"],
+      },
+      keyPoint: {
+        type: [String],
+      },
+      venueName: {
+        type: String,
+        required: [true, "Tempat acara harus diisi"],
+      },
+
+      image: {
+        type: mongoose.Types.ObjectId,
+        ref: "Image",
+        required: true,
+      },
+      category: {
+        type: mongoose.Types.ObjectId,
+        ref: "Category",
+        required: true,
+      },
+      talent: {
+        type: mongoose.Types.ObjectId,
+        ref: "Talent",
+        required: true,
+      },
       organizer: {
         type: mongoose.Types.ObjectId,
         ref: "Organizer",
