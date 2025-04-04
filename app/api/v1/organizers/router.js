@@ -4,6 +4,8 @@ const {
   createCMSUser,
   getCMSUsers,
 } = require("./controller");
+
+const { createCMSOrganizer, createCMSUser } = require("./controller");
 const router = express();
 
 const {
@@ -25,5 +27,10 @@ router.post(
 );
 
 router.get("/users", authenticateUser, authorizeRoles("owner"), getCMSUsers);
+
+const create = require("./controller");
+const router = express();
+
+router.post("/organizers", create);
 
 module.exports = router;

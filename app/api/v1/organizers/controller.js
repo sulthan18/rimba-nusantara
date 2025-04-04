@@ -1,4 +1,5 @@
 const { StatusCodes } = require("http-status-codes");
+
 const {
   createOrganizer,
   createUsers,
@@ -6,6 +7,13 @@ const {
 } = require("../../../services/mongoose/users");
 
 const createCMSOrganizer = async (req, res, next) => {
+  try {
+    const result = await createOrganizer(req);
+
+
+const createOrganizer = require("../../../services/mongoose/users");
+
+const create = async (req, res, next) => {
   try {
     const result = await createOrganizer(req);
 
