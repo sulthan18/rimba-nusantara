@@ -51,7 +51,10 @@ const createUsers = async (req, res) => {
   return result;
 };
 
-module.exports = { createOrganizer, createUsers };
+const getAllUsers = async (req) => {
+  const result = await Users.find();
 
+  return result;
+};
 
-module.exports = { createOrganizer};
+module.exports = { createOrganizer, createUsers, getAllUsers };
